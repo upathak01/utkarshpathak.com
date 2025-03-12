@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utkarsh | Personal Website</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Include Poppins font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
+  <style>
+    :root {
+      --primary-color: #1e1e1e;
+      --secondary-color: #2c2c2c;
+      --accent-color: #4caf50;
+      --text-color: #ffffff;
+      --font-family: 'Poppins', sans-serif;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-family);
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: var(--secondary-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--accent-color);
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: var(--accent-color);
+    }
+    
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+      animation: fadeInUp 1.5s ease-out;
+    }
+    
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+      opacity: 0.9;
+    }
+    
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    /* Specific styles for the About Section */
+    #about {
+      text-align: center;
+      animation: fadeInUp 2s ease-out; /* Extended animation duration */
+    }
+    
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid var(--accent-color);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .project-card {
+      background-color: var(--secondary-color);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .project-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    
+    .fitness-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .fitness-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .fitness-list i {
+      color: var(--accent-color);
+      font-size: 1.5rem;
+    }
+    
+    input, textarea, button {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    
+    input, textarea {
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      border: 1px solid #444;
+    }
+    
+    button {
+      background-color: var(--accent-color);
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border: none;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    .social-icons a {
+      margin-right: 0.8rem;
+      font-size: 1.5rem;
+      color: var(--text-color);
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      color: var(--accent-color);
+      transform: scale(1.2);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      margin-top: 2rem;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <div class="logo">Utkarsh Pathak</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#fitness">Fitness</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Aspiring Indian Army Officer | Web Developer | Fitness Enthusiast</h1>
+      <p>Striving for greatness, one step at a time.</p>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <img src="C:\Users\saadh\Desktop\PERSONAL WEBSITE IMG\xxx.jpg" alt="Profile Picture" class="profile-image" />
+    <h2>About Me</h2>
+    <p>
+      Hi, I'm Utkarsh — a passionate and driven individual with a deep commitment to learning, growth, and leadership. I’m currently pursuing a B.Tech in Electronics and Communication Engineering and working toward my lifelong dream of joining the Indian Army through the CDS exam.
+    </p>
+    <h2>My Journey and Inspiration</h2>
+    <p>
+      Since childhood, I’ve been fascinated by the discipline, courage, and sense of purpose that define the armed forces. My inspiration stems from legends like Major Sandeep Unnikrishnan and Field Marshal Sam Manekshaw, whose unwavering bravery and leadership left a lasting impact on me. Their stories have shaped my mindset and instilled in me a drive to serve my country with honor and dedication.
+    </p>
+    <h2>Education</h2>
+    <p>
+      My educational journey has played a crucial role in shaping my personality and interests. I started my schooling at St. Anthony’s Senior Secondary School in Barabanki and later joined Lucknow Public School, South City, Lucknow, where I honed my leadership skills and academic interests.
+    </p>
+    <h2>Academic and Technical Interests</h2>
+    <p>
+      My studies in Electronics and Communication Engineering have sparked a strong interest in military technology and secure communication systems.
+    </p>
+    <h2>Passion for Web Development</h2>
+    <p>
+      Beyond academics, I am passionate about full-stack web development and continually working on projects that challenge and refine my technical skills.
+    </p>
+    <h2>Future Goals</h2>
+    <p>
+      I aim to merge my technical expertise with my military aspirations to contribute to advancements in defense technology while staying true to my roots.
+    </p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="project-card">
+      <img src="C:\Users\saadh\Desktop\PERSONAL WEBSITE IMG\webdev.jpeg" alt="Project 1" />
+      <div>
+        <h3>Web Development Project 1</h3>
+        <p>Description of the project goes here...</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="C:\Users\saadh\Desktop\PERSONAL WEBSITE IMG\mic.jpg" alt="Event" />
+      <div>
+        <h3>Anchoring Event</h3>
+        <p>UPCON 2025: International IEEE Event...</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="C:\Users\saadh\Desktop\PERSONAL WEBSITE IMG\images.jpg" alt="NCC" />
+      <div>
+        <h3>NCC Journey</h3>
+        <p>Lucknow Republic Day Camp 2022</p>
+        <p>Army Attachment Camp (6th Raj Rif.)</p>
+        <p>CATC 216</p>
+        <p>CATC 223</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fitness Section -->
+  <section id="fitness">
+    <h2>Fitness Journey</h2>
+    <ul class="fitness-list">
+      <li><i class="fas fa-running"></i> City Marathon: 5K</li>
+      <li><i class="fas fa-running"></i> The City Marathon: 10K</li>
+      <li><i class="fas fa-walking"></i> Walkathon by Decathlon</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/utkarsh-pathak-408946297/" target="_blank">
+        <i class="fab fa-linkedin"></i>
+        <img src="C:\Users\saadh\Desktop\PERSONAL WEBSITE IMG\linkedin.png" alt="Linkedin" style="font-size: 30px; width: 30px; height: 30px; margin-left: 15px;" /></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="https://www.instagram.com/_upathak/?next=%2F" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+        <img src="C:\Users\saadh\Desktop\PERSONAL WEBSITE IMG\instagram.png" alt="Instagram" style="font-size: 30px; width: 30px; height: 30px; margin-left: 15px;" /></a>
+      <a href="https://x.com/UtkaPathak" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+        <img src="C:\Users\saadh\Desktop\PERSONAL WEBSITE IMG\twitter.png" alt="Twitter" style="font-size: 30px; width: 30px; height: 30px; margin-left: 15px;" /></a>
+    </div>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Utkarsh. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
