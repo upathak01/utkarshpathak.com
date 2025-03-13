@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events Hosted - My Portfolio</title>
+    
+    <style>
+        :root {
+            --primary-color: #1e1e1e;
+            --secondary-color: #2c2c2c;
+            --accent-color: #30ae34;
+            --text-color: #ffffff;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background-color: var(--secondary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            
+        }
+
+        @keyframes rotateLogo {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 1.5rem;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 1rem;
+            border: 2px solid var(--accent-color);
+            display: block;
+            object-fit: cover;
+        }
+        .project-imag {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 1rem;
+    display: block;
+    object-fit: cover;
+    animation: rotateImage 5s linear infinite;
+    border: none;
+}
+
+@keyframes rotateImage {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+        .cta-btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+
+        .cta-btn:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--secondary-color);
+            border-top: 2px solid var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="logo">UPCON</div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1>Events Hosted</h1>
+    <p>Showcasing my experience in hosting high-profile events.</p>
+</div>
+
+<!-- About the Event -->
+<section>
+    <h2>UPCON 2025</h2>
+    <img src="C:\Users\saadh\Desktop\PERSONAL WEBSITE IMG\upcon3-removebg-preview.png" alt="UPCON 2025" class="project-imag">
+    <p>
+        IEEE Uttar Pradesh Section International Conference on Electrical, Electronics and Computer Engineering (UPCON) is a top-level International Conference covering broad topics in the areas of Electrical, Electronics, and Computer Engineering.
+    </p>
+    <a href="https://upcon.srmcem.ac.in/" target="_blank" class="cta-btn" rel="noopener noreferrer">Learn More</a>
+    
+    <h3>Certificate of Participation</h3>
+    <img src="C:\Users\saadh\Desktop\PERSONAL WEBSITE IMG\IEEECT.jpg" alt="Certificate of Participation" class="project-image">
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Utkarsh. All rights reserved.
+</footer>
+
+</body>
+</html>
