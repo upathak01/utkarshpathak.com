@@ -13,7 +13,7 @@
     :root {
       --primary-color:#1e1e1e;
       --secondary-color: #2c2c2c;
-      --accent-color:#0d25d2;
+      --accent-color:#4caf50;
       --text-color: #ffffff;
       --font-family: 'Poppins', sans-serif;
     }
@@ -178,7 +178,7 @@
     }
     
     button:hover {
-      background-color: #45a049;
+      background-color: #00b006;
     }
     
     .social-icons a {
@@ -192,6 +192,17 @@
       color: var(--accent-color);
       transform: scale(1.2);
     }
+    .read-more-btn {
+    padding: 16px 28px;
+    font-size: 18px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: auto;
+  }
     
     footer {
       text-align: center;
@@ -218,6 +229,7 @@
     text-decoration: none; /* Removes the underline */
     cursor: pointer; /* Keeps the clickable behavior */
   }
+  
   </style>
 </head>
 <body>
@@ -228,13 +240,13 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#fitness">Fitness</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <!--<li><a href="#fitness">Fitness</a></li>-->
+        <li><a href="#contact">Contact Me</a></li>
       </ul>
     </nav>
     <div class="hero">
-      <h1>Aspiring Indian Army Officer | Web Developer | Fitness Enthusiast</h1>
-      <p>Striving for greatness, one step at a time.</p>
+      <h1>Aspiring Indian Army Officer | Web Developer | Passionate in Military Technology</h1>
+      <p>Striving for Greatness, One step at a Time.</p>
     </div>
   </header>
 
@@ -243,29 +255,45 @@
     <img src="xxx.jpg" alt="Profile Picture" class="profile-image" />
     <h2>About Me</h2>
     <p>
-      Hi, I'm Utkarsh — a passionate and driven individual with a deep commitment to learning, growth, and leadership. I’m currently pursuing a B.Tech in Electronics and Communication Engineering and working toward my lifelong dream of joining the Indian Army.
+      Hi, I'm Utkarsh — a passionate individual currently pursuing a B.Tech in Electronics and Communication Engineering, aspiring to join the Indian Army. I'm driven by a deep commitment to learning, growth, and leadership.
     </p>
-    <h2>My Journey and Inspiration</h2>
-    <p>
-      Since childhood, I’ve been fascinated by the discipline, courage, and sense of purpose that define the armed forces. My inspiration stems from legends like Major Sandeep Unnikrishnan and Field Marshal Sam Manekshaw, whose unwavering bravery and leadership left a lasting impact on me. Their stories have shaped my mindset and instilled in me a drive to serve my country with honor and dedication.
-    </p>
-    <h2>Education</h2>
-    <p>
-      My educational journey has played a crucial role in shaping my personality and interests. I started my schooling at St. Anthony’s Senior Secondary School in Barabanki and later joined Lucknow Public School, South City, Lucknow, where I honed my leadership skills and academic interests.
-    </p>
-    <h2>Academic and Technical Interests</h2>
-    <p>
-      My studies in Electronics and Communication Engineering have sparked a strong interest in military technology and secure communication systems.
-    </p>
-    <h2>Passion for Web Development</h2>
-    <p>
-      Beyond academics, I am passionate about full-stack web development and continually working on projects that challenge and refine my technical skills.
-    </p>
-    <h2>Future Goals</h2>
-    <p>
-      I aim to merge my technical expertise with my military aspirations to contribute to advancements in defense technology while staying true to my roots.
-    </p>
+    <button id="read-more-btn" class="read-more-btn">Read More</button>
+    
+    <div id="more-content" style="display: none;">
+      <h2>My Journey and Inspiration</h2>
+      <p>
+        Since childhood, I’ve been fascinated by the discipline, courage, and sense of purpose that define the armed forces. My inspiration stems from legends like Major Sandeep Unnikrishnan and Field Marshal Sam Manekshaw, whose unwavering bravery and leadership left a lasting impact on me. Their stories have shaped my mindset and instilled in me a drive to serve my country with honor and dedication.
+      </p>
+      <h2>Education</h2>
+      <p>
+        My educational journey has played a crucial role in shaping my personality and interests. I started my schooling at St. Anthony’s Senior Secondary School in Barabanki and later joined Lucknow Public School, South City, Lucknow, where I honed my leadership skills and academic interests.
+      </p>
+      <h2>Academic and Technical Interests</h2>
+      <p>
+        My studies in Electronics and Communication Engineering have sparked a strong interest in military technology and secure communication systems.
+      </p>
+      <h2>Passion for Web Development</h2>
+      <p>
+        Beyond academics, I am passionate about full-stack web development and continually working on projects that challenge and refine my technical skills.
+      </p>
+      <h2>Future Goals</h2>
+      <p>
+        I aim to merge my technical expertise with my military aspirations to contribute to advancements in defense technology while staying true to my roots.
+      </p>
+    </div>
   </section>
+  <script>
+    document.getElementById('read-more-btn').addEventListener('click', function() {
+      const moreContent = document.getElementById('more-content');
+      if (moreContent.style.display === 'none') {
+        moreContent.style.display = 'block';
+        this.textContent = 'Read Less';
+      } else {
+        moreContent.style.display = 'none';
+        this.textContent = 'Read More';
+      }
+    });
+  </script>
 
   <!-- Portfolio Section -->
   <section id="portfolio">
@@ -278,10 +306,10 @@
       </div>
     </div>
     <div class="project-card">
-      <img src="mic.jpg" alt="Event" />
+      <a href="AnchoringEvents.html" class="no-style-link"><img src="mic.jpg" alt="Event" /></a>
       <div>
         <h3><a href="AnchoringEvents.html" class="no-style-link">Anchoring Event</a></h3>
-        <p>UPCON 2025: International IEEE Event...</p>
+        <p><a href="AnchoringEvents.html" class="no-style-link">UPCON 2025: International IEEE Event...</a></p>
       </div>
     </div>
     <div class="project-card">
@@ -296,8 +324,9 @@
     </div>
   </section>
 
-  <!-- Fitness Section -->
+  <!-- Fitness Section
   <section id="fitness">
+    <div class="project-card">
     <h2>Fitness Journey</h2>
     <ul class="fitness-list">
       <li><i class="fas fa-running"></i> City Marathon: 5K</li>
@@ -306,11 +335,12 @@
       <li><i class="fas fa-walking"></i> Healthon Season 2: 10k </li>
       <li><i class="fas fa-walking"></i> Aao Chalen by Decathlon Season 1</li>
     </ul>
-  </section>
+    </div>
+  </section>-->
 
   <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact</h2>
+    <h2>Contact Me</h2>
     <div class="social-icons">
       <a href="https://www.linkedin.com/in/utkarsh-pathak-408946297/" target="_blank">
         <i class="fab fa-linkedin"></i>
